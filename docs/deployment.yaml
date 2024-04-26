@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tetris-deployment
+  name: boardgame-deployment
 spec:
   replicas: 2 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: tetris
+      app: boardgame
   template:
     metadata:
       labels:
-        app: tetris
+        app: boardgame
     spec:
       containers:
-        - name: tetris
-          image: adijaiswal/tetris:v1 # Replace with the actual image tag
+        - name: boardgame
+          image: akashray3/docker_jenkins_build:latest # Replace with the actual image tag
           ports:
-            - containerPort: 80 # Replace with the port your Tetris game listens on
+            - containerPort: 30620 # Replace with the port your Tetris game listens on
